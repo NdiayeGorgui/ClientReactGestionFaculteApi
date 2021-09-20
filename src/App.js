@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { Fragment, useState } from 'react';
+import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { Menu } from 'semantic-ui-react';
+import Accueil from './Composants/Accueil';
+import Page404 from './Composants/Page404';
+import Cours from './Composants/Cours';
+import Recherche from './Composants/Recherche';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <Fragment>
 
+            <BrowserRouter>
+               
+            <Menu>
+            <Menu.Item as={NavLink} activeStyle={{color:"red", fontWeight: "bold"}} to="/" exact={true}>Accueil</Menu.Item>
+            <Menu.Item as={NavLink} activeStyle={{ color:"red",fontWeight: "bold"}} to="/recherche">Recherche</Menu.Item>
+          </Menu>
+
+                <Switch>
+
+                    <Route path="/" component={Accueil} exact />
+                    <Route path="/recherche" component={Recherche} />
+                    <Route path="/cours" component={Cours} />
+                    <Route path="*" component={Page404} />
+
+                </Switch>
+            </BrowserRouter>
+        </Fragment>
+    );
+}
 export default App;
