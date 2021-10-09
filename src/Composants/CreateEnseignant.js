@@ -113,11 +113,11 @@ getTitle(){
     </Form.Group>
     <Form.Group widths={2}>
       <Form.Input label='Adresse' placeholder='Adresse' value={this.state.adress} onChange={this.changeAdress}/>
-      <Form.Input label='Téléhone' placeholder='Téléhone' value={this.state.telephone} onChange={this.changeTelephone}/>
+      <Form.Input label='Téléhone'type="tel" id="cel" name="cel" required placeholder="514-641-2512" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  value={this.state.telephone} onChange={this.changeTelephone}/>
     </Form.Group>
     <Form.Group widths={2}>
-      <Form.Input label='Email' placeholder='Email'value={this.state.mail} onChange={this.changeMail} />
-      <Form.Input label='Statut' placeholder='Statut'value={this.state.statut} onChange={this.changeStatut} />
+      <Form.Input label='Email' placeholder='Email' type="email" id="email" value={this.state.mail} onChange={this.changeMail} />
+      <Form.Input label='Statut' placeholder='Statut'  value={this.state.statut}  onChange={this.changeStatut} />
     </Form.Group>
     <Button positive type='submit' onClick={this.saveOrUpdateEnseignant}>Valider</Button>
     <Button negative type='submit'onClick={this.cancel.bind(this)}>Annuler</Button>

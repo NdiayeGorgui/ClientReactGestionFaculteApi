@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Input, Label, Button, Card, Image } from 'semantic-ui-react';
 
-const Recherche = (props) => {
+const RechercheCours = (props) => {
     const [libelle, setLibelle] = useState("");
     const [cours, setCours] = useState([]);
     const [erreur, setErreur] = useState("");
@@ -41,9 +41,10 @@ const Recherche = (props) => {
     return (
         <Container>
            
-            <Label pointing="right">Cours</Label>
+            <Label pointing="right">Libellé du Cours</Label>
             <Input type="text" value={libelle} onChange={(e) => setLibelle(e.target.value)} />
-            <Button onClick={appelApi}>Rechercher les cours</Button>
+            <Button onClick={appelApi}>Rechercher</Button>
+            <hr/>
             <h4>Résultats de la recherche</h4>
             {cours.length > 0 ? `Il y a ${cours.length} résultat(s)` : undefined}
       <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", width: "100%"}}>
@@ -52,4 +53,4 @@ const Recherche = (props) => {
         </Container>
     )
 }
-export default Recherche;
+export default RechercheCours;
