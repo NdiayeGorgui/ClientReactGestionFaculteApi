@@ -10,9 +10,9 @@ class CreateCours extends Component {
       id: this.props.match.params.id,
       libelle: '',
       nbeHeure: 0,
-
-      enseignantid: 1,
-      typecourid: 1,
+      enseignantid:1,
+      typecourid:1
+     
 
 
     }
@@ -26,7 +26,7 @@ class CreateCours extends Component {
 
 
   componentDidMount() {
-
+   // console.log(this.props.match);
     if (this.state.id === '_add') {
       return
     } else {
@@ -37,16 +37,19 @@ class CreateCours extends Component {
           nbeHeure: cours.nbeHeure,
           enseignantid: cours.enseignant.id,
           typecourid: cours.typecour.id,
-
+         
         });
+       
       });
     }
+   
   }
 
   saveOrUpdateCours = (e) => {
     e.preventDefault();
-    let cours = { libelle: this.state.libelle, nbeHeure: this.state.nbeHeure, enseignantid: this.state.enseignantid, typecourid: this.state.typecourid };
-    // console.log('cours=>'+JSON.stringify(cours));
+   
+    let cours = { libelle: this.state.libelle, nbeHeure: this.state.nbeHeure,enseignant:{id:this.state.enseignantid},typecour:{id:this.state.typecourid} };
+     console.log('cours=>'+JSON.stringify(cours));
 
     if (this.state.id === '_add') {
       CourService.createCours(cours).then(response => {

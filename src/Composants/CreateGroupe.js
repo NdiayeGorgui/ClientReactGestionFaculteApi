@@ -36,7 +36,7 @@ class CreateGroupe extends Component {
 
   saveOrUpdateGroupe = (e) => {
     e.preventDefault();
-    let groupes = { numeroGroupe: this.state.numeroGroupe, formationid: this.state.formationid };
+    let groupes = { numeroGroupe: this.state.numeroGroupe, formation:{id:this.state.formationid} };
     // console.log('groupes=>'+JSON.stringify(groupes));
 
     if (this.state.id === '_add') {
@@ -91,7 +91,7 @@ class CreateGroupe extends Component {
           <Form.Group widths={2}>
 
             <Form.Input label='Nom Formation' placeholder='Nom Formation' value={this.state.formationid} onChange={this.changeFormation} />
-
+           
           </Form.Group>
 
           <Button positive type='submit' onClick={this.saveOrUpdateGroupe}>Valider</Button>

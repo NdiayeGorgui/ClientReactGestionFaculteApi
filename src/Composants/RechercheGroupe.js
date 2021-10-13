@@ -51,7 +51,7 @@ const RechercheGroupe = (props) => {
       <Button onClick={appelApi}>Rechercher</Button>
       <hr />
       <h4>Résultats de la recherche</h4>
-      {groupes.length > 0 ? `Il y a ${groupes.length} résultat(s)` : undefined}
+    {/*  {groupes.length > 0 ? `Il y a ${groupes.length} résultat(s)` : undefined}*/}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", width: "100%" }}>
         {groupes.length > 0 ? renderGroupe() : undefined}
       </div>

@@ -31,10 +31,10 @@ const RechercheEnseignant = (props) => {
             }}><a>Prénom: {unEnseignant.firstName}</a> &nbsp;
               <p>Nom: {unEnseignant.lastName}</p>
             </Card.Header>
-            Adresse: {unEnseignant.adress} <br />
-            Mail: {unEnseignant.mail}<br />
-            Téléphone: {unEnseignant.telephone}<br />
-            Statut: {unEnseignant.statut}
+           <b> Adresse:</b> {unEnseignant.adress} <br />
+           <b> Mail:</b> {unEnseignant.mail}<br />
+           <b>Téléphone:</b> {unEnseignant.telephone}<br />
+           <b> Statut:</b> {unEnseignant.statut}
           </Card.Content>
         </Card>
       )
@@ -49,7 +49,7 @@ const RechercheEnseignant = (props) => {
       <Button onClick={appelApi}>Rechercher</Button>
       <hr />
       <h4>Résultats de la recherche</h4>
-      {enseignants.length > 0 ? `Il y a ${enseignants.length} résultat(s)` : undefined}
+    {/*  {enseignants.length > 0 ? `Il y a ${enseignants.length} résultat(s)` : undefined}*/}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", width: "100%" }}>
         {enseignants.length > 0 ? renderEnseignant() : undefined}
       </div>

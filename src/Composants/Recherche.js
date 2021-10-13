@@ -28,9 +28,9 @@ const RechercheCours = (props) => {
                   })
                 }}><a>Cours: {unCours.libelle}</a>
                 </Card.Header>
-                Volume Horaire: {unCours.nbeHeure} H<br/>
-                Type de cours: {unCours.typecour.type}<br/>
-                Enseignant: {unCours.enseignant.firstName} &nbsp; 
+                <b> Volume Horaire:</b> {unCours.nbeHeure} H<br/>
+                <b> Type de cours: </b>{unCours.typecour.type}<br/>
+                <b> Enseignant:</b> {unCours.enseignant.firstName} &nbsp; 
                 {unCours.enseignant.lastName}
               </Card.Content>
             </Card>
