@@ -1,6 +1,5 @@
 import { Container, Segment, Label, Button } from "semantic-ui-react";
 import React, { Component } from 'react';
-
 import CourService from "../Services/CourService";
 import swal from "sweetalert";
 

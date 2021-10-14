@@ -23,7 +23,7 @@ const RechercheEnseignant = (props) => {
           <Card.Content>
             <Card.Header onClick={() => {
               props.history.push({
-                pathname: `/enseignant/${unEnseignant.id}`,
+                pathname: `/details-enseignant/${unEnseignant.id}`,
                 state: {
                   enseignants: unEnseignant
                 }

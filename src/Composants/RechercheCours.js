@@ -21,7 +21,7 @@ const RechercheCours = (props) => {
               <Card.Content>
                 <Card.Header onClick={() => {
                   props.history.push({
-                    pathname: `/cours/${unCours.id}`,
+                    pathname: `/details-cours/${unCours.id}`,
                     state: {
                       cours: unCours
                     }

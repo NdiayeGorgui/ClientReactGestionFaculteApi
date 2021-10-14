@@ -5,7 +5,6 @@ import { Dropdown, Header, Menu, Button } from 'semantic-ui-react';
 import Accueil from './Composants/Accueil';
 import Page404 from './Composants/Page404';
 import Cours from './Composants/Cours';
-import Recherche from './Composants/Recherche';
 import Enseignant from './Composants/Enseignants';
 import ListEnseignant from './Composants/ListEnseignant';
 import CreateEnseignant from './Composants/CreateEnseignant';
@@ -24,19 +23,18 @@ import CreateGroupe from './Composants/CreateGroupe';
 import RechercheFormation from './Composants/RechercheFormation';
 import RechercheGroupe from './Composants/RechercheGroupe';
 import Login from './Login';
+import RechercheCours from './Composants/RechercheCours';
 
 
 function App() {
   return (
     <div>
-
       <Fragment>
 
         <BrowserRouter>
 
           <Menu>
             <Menu.Item as={NavLink} activeStyle={{ color: "red", fontWeight: "bold" }} to="/" exact={true}>Accueil</Menu.Item>
-
 
             <Menu.Item >
               <Menu.Item activeStyle={{ color: "red", fontWeight: "bold" }} >
@@ -50,7 +48,6 @@ function App() {
                 </Dropdown>
               </Menu.Item>
             </Menu.Item>
-
 
             <Menu.Item activeStyle={{ color: "red", fontWeight: "bold" }} >
               <Dropdown item text='Cours'>
@@ -70,8 +67,6 @@ function App() {
                   <Dropdown.Item as={NavLink} activeStyle={{ color: "red", fontWeight: "bold" }} to="/groupes">Liste des Groupes de Formation</Dropdown.Item>
                   <Dropdown.Item as={NavLink} activeStyle={{ color: "red", fontWeight: "bold" }} to="/rechercheFormation">Rechercher une Formation</Dropdown.Item>
                   <Dropdown.Item as={NavLink} activeStyle={{ color: "red", fontWeight: "bold" }} to="/rechercheGroupe">Rechercher un groupe</Dropdown.Item>
-
-
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>
@@ -89,29 +84,24 @@ function App() {
 
             <Route path="/" component={Accueil} exact />
             <Route path="/login" component={Login} />
-            <Route path="/recherche" component={Recherche} />
+            <Route path="/recherche" component={RechercheCours} />
             <Route path="/rechercheEnseignant" component={RechercheEnseignant} />
             <Route path="/rechercheFormation" component={RechercheFormation} />
             <Route path="/rechercheGroupe" component={RechercheGroupe} />
             <Route path="/cours" component={Cours} />
             <Route path="/add-cours/:id" component={CreateCours} />
             <Route path="/details-cours/:id" component={DetailsCours} />
-
             <Route path="/typecours" component={TypeCours} />
-
             <Route path="/enseignants" component={Enseignant} />
             <Route path="/add-enseignant/:id" component={CreateEnseignant} />
             <Route path="/details-enseignant/:id" component={DetailsEnseignant} />
-
             <Route path="/formations" component={Formations} />
             <Route path="/add-formation/:id" component={CreateFormation} />
-
             <Route path="/groupes" component={Groupes} />
             <Route path="/add-groupe/:id" component={CreateGroupe} />
             {/*<Route path="/update-enseignant/:id" component={UpdateEnseignant} />*/}
             <Route path="*" component={Page404} />
            
-
           </Switch>
         </BrowserRouter>
 

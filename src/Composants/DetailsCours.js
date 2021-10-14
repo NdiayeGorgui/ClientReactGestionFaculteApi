@@ -8,7 +8,9 @@ class DetailsCours extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            cours: {}
+            cours: [],
+            enseignant:[]
+            
         }
     }
     componentDidMount() {
@@ -19,16 +21,20 @@ class DetailsCours extends Component {
     retour() {
         this.props.history.push('/cours');
     }
+
+    
     render() {
         return (
             <Container>
                 <br />
+                
                 <Card>
                     <Card.Content>
                         <Card.Header>Cours:{this.state.cours.libelle} </Card.Header>
                         <Card.Description>
                             <span >Nombre d'heures:{this.state.cours.nbeHeure} </span>
                         </Card.Description>
+                       
                     </Card.Content>
                 </Card>
                 <Button primary type='submit' onClick={this.retour.bind(this)}>Retour</Button>

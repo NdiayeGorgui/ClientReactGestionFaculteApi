@@ -2,8 +2,7 @@ import { Component } from "react";
 import { Button, Container } from "semantic-ui-react";
 import swal from "sweetalert";
 import EnseignantService from "../Services/EnseignantService";
-import Footer from "./Footer";
-import HeaderComponent from "./HeaderComponent";
+
 
 class Enseignant extends Component {
   constructor(props) {
@@ -63,10 +62,7 @@ class Enseignant extends Component {
   render() {
     return (
       <div>
-
         <Container>
-
-
           <h3 className="text-left">Liste des Enseignants </h3>
           <div >
             <Button primary onClick={this.addEnseignant}> Ajouter</Button>
@@ -82,7 +78,6 @@ class Enseignant extends Component {
                 <th></th>
                 <th >Actions</th>
                 <th></th>
-
               </tr>
             </thead>
             <tbody>
@@ -100,12 +95,7 @@ class Enseignant extends Component {
                       <td><Button color='blue' onClick={() => this.detailsEnseignant(enseignant.id)}>Détails</Button></td>
                     </tr>
                 )
-
-
               }
-
-
-
             </tbody>
           </table>
 
